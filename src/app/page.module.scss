@@ -1,4 +1,8 @@
-@import '../utils/variables.scss';
+<<<<<<< HEAD
+@use '../utils/variables.scss' as *;
+=======
+@use '../utils/variables.scss';
+>>>>>>> 5f7de9464b71b47543611ec4af97587154ab8d77
 
 .container {
   display: grid;
@@ -19,7 +23,7 @@
 .title {
   font-size: 72px;
   background: linear-gradient(to bottom, #194c33, #bbb);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
