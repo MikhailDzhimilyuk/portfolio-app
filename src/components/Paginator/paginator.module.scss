@@ -1,0 +1,57 @@
+@import '../../utils/variables.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.item {
+  padding: 0 6px;
+}
+
+.arrow {
+  font-weight: bold;
+}
+
+.choosedItem {
+  padding: 0 4px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.item:hover, .arrow:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: $medium-width) {
+  .container {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: $small-width) {
+  .container {
+    font-size: 24px;
+  }
+  .item {
+    padding: 0 5px;
+  }
+  .choosedItem {
+    padding: 0 3px;
+  }
+}
+
+@media (max-width: $extra-small) {
+  .container {
+    font-size: 20px;
+  }
+  .item {
+    padding: 0 4px;
+  }
+  .choosedItem {
+    padding: 0 2px;
+  }
+}

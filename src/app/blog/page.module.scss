@@ -1,0 +1,122 @@
+@import '../../utils/variables.scss';
+
+$maxColor: 225;
+$minColor: 35;
+$alpha: 0.55;
+
+@function randomNum($min, $max) {
+    $rand: random();
+    $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+    @return $randomNum;
+}
+
+@function randomColor($min, $max, $alpha) {
+    $alpha: 0.5 !default;
+    @return rgba(randomNum($min, $max), randomNum($min, $max), randomNum($min, $max), $alpha);
+}
+
+$colors: 
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha),
+    randomColor($minColor, $maxColor, $alpha);
+
+.container {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    gap: 6%;
+    margin-bottom: 50px;
+    padding: 20px 1%;
+    border-radius: 10px;
+}
+
+.container:hover {
+    opacity: 0.9;
+}
+
+@for $i from 1 through length($colors) {
+    .container:nth-child(#{length($colors)}n+#{$i}) {
+        border: 5px inset nth($colors, $i);
+    }
+}
+
+.imageContainer {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+}
+
+.image {
+    width: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 0.25fr 0.25fr 0.5fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    word-break: break-word; 
+}
+
+.title {
+    font-size: 34px;
+
+}
+
+.author {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 24px;
+}
+
+@media (max-width: $medium-width) {
+    .title {
+        font-size: 30px;
+    }
+
+    .author {
+        font-size: 26px;
+        font-weight: bold;
+    }
+    
+    .desc {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: $small-width) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media (max-width: $extra-small) {
+    .title {
+        font-size: 28px;
+    }
+
+    .author {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .desc {
+        font-size: 20px;
+    }
+}

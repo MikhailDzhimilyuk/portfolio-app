@@ -1,0 +1,114 @@
+{
+    "categoryInfo" : {
+        "personalqualities": {
+            "title": "My personal qualities",
+            "info": [
+                {
+                    "imageURL": "/logical_thinking.jpg",
+                    "titleInfo": "Logical Thinking",
+                    "desc": "I can analyze problems, break them down into smaller subproblems, and find effective solutions"
+
+                },
+                {
+                    "imageURL": "/attention_to_detail.jpg",
+                    "titleInfo": "Attention to Detail",
+                    "desc": "In programming, it is important to be attentive to details, as a small mistake can lead to serious problems"
+                },
+                {
+                    "imageURL": "/problem_solving_skills.jpg",
+                    "titleInfo": "Problem Solving Skills",
+                    "desc": "The ability to find solutions to complex problems and fix errors in code."
+                },
+                {
+                    "imageURL": "/perseverance.jpg",
+                    "titleInfo": "Perseverance",
+                    "desc": "Programmers often face difficulties, and it is important to be able to continue to look for solutions, even if they are not obvious"
+                },
+                {
+                    "imageURL": "/creativity.jpg",
+                    "titleInfo": "Creativity",
+                    "desc": "I can think outside the box and come up with innovative solutions"
+                },
+                {
+                    "imageURL": "/teamwork.jpg",
+                    "titleInfo": "Teamwork",
+                    "desc": "Many projects require collaboration with other developers, designers, and stakeholders, so it is important to be able to work in a team"
+                },
+                {
+                    "imageURL": "/systems_thinking.jpg",
+                    "titleInfo": "Systems Thinking",
+                    "desc": "The ability to see the \"big picture\" and understand how the different parts of the system interact with each other"
+                },
+                {
+                    "imageURL": "/willingness_to_learn.jpg",
+                    "titleInfo": "Willingness to Learn",
+                    "desc": "Technologies and programming languages ​​are constantly changing, so it is important to be ready to constantly learn and adapt"
+                },
+                {
+                    "imageURL": "/communication_skills.jpg",
+                    "titleInfo": "Communication skills",
+                    "desc": "Ability to explain technical concepts to non-technical people and work with various stakeholders"
+                },
+                {
+                    "imageURL": "/time_management.jpg",
+                    "titleInfo": "Time management",
+                    "desc": "Ability to effectively manage your time and prioritize, especially when working on multiple projects at once. These qualities will help a programmer not only cope with current tasks, but also develop in the profession"
+                }
+            ]
+        },
+        "professionalskills": {
+        "title": "My proffesional skills",
+        "info": [
+            {
+                "imageURL": "/web_programmer_stack.jpg",
+                "titleInfo": "Web programmer stack",
+                "desc": "Experience in developing web applications using the following technologies: HTML, JavaScript, CSS, TypeScript, C Sharp, Sass, Git, Node.js, NestJS, Next.js, Event Loop, RESTful, PostgreSQL, Prisma, OAuth, JWT strategy, Webpack, SSR, SPA, Endpoints, Esint, Figma, Tailwind. In this application I have implemented most of the technologies listed above",
+                "buttonURL": "https://hh.ru/applicant/resumes/view?resume=4dd38e30ff0cf03d770039ed1f73597a665077",
+                "buttonText": "My portfolio"  
+            },
+            {
+                "imageURL": "/unity_game_developer_stack.jpg",
+                "titleInfo": "Unity game developer stack",
+                "desc": "Experience in developing 2D and 3D applications on the Unity engine for mobile devices and PCs; WebGL platform; implementing saves (indexedDB, on the server, File.IO, localStorage, PlayerPrefs); writing plugins in JS; shaders; URP; project optimization; procedural level generation; 3D modeling in Blender; UniTask; I apply the principles of SOLID, KISS",
+                "buttonURL": "https://yandex.ru/games/developer/57598",
+                "buttonText": "Published projects"
+            }
+        ]
+        },
+        "motivation": {
+            "title": "My motivation",
+            "info": [
+                {
+                    "imageURL": "/passion_for_programming.jpg",
+                    "titleInfo": "Passion for programming",
+                    "desc": "I am very interested in developing web applications and games on Unity. I often code until late at night. I enjoy applying new knowledge in practice and developing my projects"
+                },
+                {
+                    "imageURL": "/desire_to_learn_and_develop.jpg",
+                    "titleInfo": "Desire to learn and develop",
+                    "desc": "Technologies are constantly changing, but that's okay! I carefully study the documentation and choose the most modern and optimal options for solving problems"
+                },
+                {
+                    "imageURL": "/purposeful.jpg",
+                    "titleInfo": "Purposeful",
+                    "desc": "I have clear goals in life and I am ready to do everything to achieve them"
+                },
+                {
+                    "imageURL": "/willingness_to_solve_complex_problems.jpg",
+                    "titleInfo": "Willingness to solve complex problems",
+                    "desc": "I am motivated to cope with difficulties and find solutions"
+                },
+                {
+                    "imageURL": "/team_spirit.jpg",
+                    "titleInfo": "Team spirit",
+                    "desc": "I understand the importance of teamwork and I enjoy working with a team"
+                },
+                {
+                    "imageURL": "/contribution_to_society.jpg",
+                    "titleInfo": "Contribution to society",
+                    "desc": "I want to be involved in the creation of technologies that will be useful to society and people. For example, web applications are used everywhere: from food delivery to financial transactions. And games allow people to relax and gain strength"
+                }
+            ]
+        }
+    }
+}

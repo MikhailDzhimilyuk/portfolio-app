@@ -1,0 +1,149 @@
+@import '../../utils/variables.scss';
+
+.container {
+  padding: auto 0;
+  display: grid;
+  grid-template-areas: 
+    "post newForm";
+  grid-template-columns: 0.5fr 1fr;
+  gap: 20px;
+}
+  
+.post {
+  grid-area: post;
+  margin-bottom: 30px;
+  gap: 15px;
+  display: grid;
+  grid-template-areas: 
+    "img del"
+    "title title";
+  grid-template-columns: 1fr 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px dashed #bbb;
+}
+
+.post:first-child {
+  margin-top: 10px;
+}
+
+.post:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.postTitle {
+  grid-area: title;
+  word-break: break-word;
+}
+
+.imgContainer {
+  margin-top: 6px;
+  grid-area: img;
+  width: 250px;
+  height: 125px;
+  position: relative;
+}
+
+.img {
+  object-fit: fill;
+  border-radius: 5px;
+}
+
+.delete {
+  grid-area: del;
+  text-align: center;
+  height: fit-content;
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+}
+
+.delete:hover {
+  color: #d60000;
+}
+
+.newform {
+  grid-area: newForm;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input,
+.textArea {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #bbb;
+  border-radius: 3px;
+  color: inherit;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.button, .btnShowMore, .btnHide {
+  padding: 20px;
+  background-color: #53c28b;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+}
+
+.btnShowMore, .btnHide {
+  margin-left: 10%;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.button:hover, .btnShowMore:hover {
+  background-color: #4ab17e;
+  cursor: pointer;
+}
+
+.btnHide {
+  background-color: #bec036;
+}
+
+.btnHide:hover {
+  cursor: pointer;
+  background-color: #abad2d;
+}
+
+@media (max-width: $small-width) {
+  .container {
+    grid-template-areas: 
+      "newForm"
+      "post" ;
+    grid-template-columns: 1fr;
+  }
+
+  .post {
+    padding: 5px 10px 10px 10px;
+  }
+
+  .delete {
+    font-size: 30px;
+  }
+
+  .newform {
+    margin-bottom: 50px;
+  }
+  .imgContainer {
+    margin-top: 10px; 
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: $extra-small) {
+  .imgContainer {
+    width: 320px;
+    height: 160px;
+  }
+}

@@ -1,0 +1,74 @@
+@import '../../utils/variables.scss';
+
+.container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 22px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 20px;
+}
+
+.signout, .signin {
+    white-space: nowrap;
+    padding: 5px;
+    border: none;
+    background-color: #ad1919;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.signin {
+    background-color: #53c28b; 
+}
+
+.signout:hover, .signin:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: $medium-width) {
+    .links {
+        font-size: 16px;
+        gap: 16px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: $small-width) {
+    .links {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .signin, .signout {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: $extra-small) {
+    .links {
+        font-size: 12px;
+    }
+
+    .signin, .signout {
+        font-size: 10px;
+    }
+}

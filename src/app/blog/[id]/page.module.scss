@@ -1,0 +1,86 @@
+@import '../../../utils/variables.scss';
+
+.container {
+  margin-bottom: auto;
+}
+
+.post {
+    word-break: break-word;
+    margin-top: 20px;
+}
+
+.imageContainer { 
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    width: 550px;
+    height: 360px;
+    position: relative;
+    float: right;
+    margin: 0 0 7px 14px;
+}
+
+.image {
+   object-fit: cover;
+   border-radius: 10px;
+}
+
+.title {
+    grid-area: title;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.content {
+    grid-area: content;
+    margin-top: 50px;
+    font-size: 24px; 
+    font-weight: 300;
+}
+
+.backArrow {
+    font-size: 42px;
+    font-weight: bolder;
+}
+
+.backArrow:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: $medium-width) {
+    .post {
+        display: grid;
+        grid-template-areas: 
+            "img"
+            "title"
+            "content";
+    }
+    
+    .imageContainer {
+        margin: 0 auto;
+    }
+
+    .title{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .content {
+        margin-top: 30px;
+        text-align: justify;
+    }
+}
+
+@media (max-width: $small-width) {
+    .imageContainer { 
+        width: 480px;
+        height: 310px;
+    }
+}
+
+@media (max-width: $extra-small) {
+    .imageContainer { 
+        width: 420px;
+        height: 280px;
+    }
+}

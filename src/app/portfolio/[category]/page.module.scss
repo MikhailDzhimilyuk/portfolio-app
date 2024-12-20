@@ -1,0 +1,104 @@
+@import '../../../utils/variables.scss';
+
+.catTitle {
+    text-align: center;
+    font-size: 46px;
+    color: #41b47b;
+    margin-bottom: 70px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.item:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+}
+
+.imgContainer {
+    flex: 1;
+    height: 500px;
+    position: relative;
+}
+
+.img {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.desc {
+    font-size: 26px;
+}
+
+@media (max-width: $large-width) {
+    .title {
+        font-size: 46px;
+    }
+    .desc {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: $medium-width) {
+    .title {
+        font-size: 42px;
+    }
+    .desc {
+        font-size: 22px;
+    }
+    .imgContainer {
+        height: 400px;
+    }
+    .item {
+        gap: 40px;
+    }
+}
+
+@media (max-width: $small-width) {
+    .catTitle {
+        font-size: 42px;
+    }
+    .title {
+        font-size: 38px;
+    }
+    .desc {
+        font-size: 20px;
+    }
+    .imgContainer {
+        height: 280px;
+    }
+    .item {
+        gap: 30px;
+    }
+}
+
+@media (max-width: $extra-small) {
+    .title {
+        font-size: 34px;
+    }
+    .desc {
+        font-size: 18px;
+    }
+    .imgContainer {
+        height: 210px;
+    }
+    .item {
+        gap: 20px;
+    }
+}
