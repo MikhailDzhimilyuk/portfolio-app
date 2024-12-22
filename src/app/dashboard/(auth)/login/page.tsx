@@ -11,31 +11,23 @@ const Login = () => {
   const router = useRouter();
   const firstLogSocials = async (email: string, name: string) => {
     try {
-      let data = true// await getUser(email);
-
-      if (!data) {
-        const password = '';
-        const res = await fetch("/api/auth/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            name,
-            password,
-          }),
-        });
-      }
+      const password = '';
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          name,
+          password,
+        }),
+      });
+      console.log(res);
     } catch (err) {
       console.log(err);
     }
   }
-  const signInSocials = () => {
-   signIn("yandex");
-  }
-
-
 
   useEffect(() => {
     if (session.status == "authenticated") {
@@ -59,7 +51,7 @@ const Login = () => {
       const password = e.target[1].value;
       signIn("credentials", { email, password });
     };
-    console.log('rerender')
+
     return (
       <div className={styles.container}>
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -80,7 +72,7 @@ const Login = () => {
           <button className={styles.button}>Login with Email</button>
         </form>
   
-        <button onClick={() => signInSocials()} className={styles.yandex}>Login with Yandex</button>
+        <button onClick={() => signIn("yandex")} className={styles.yandex}>Login with Yandex</button>
         <Link className={styles.register} href='/dashboard/register'>Don't have an account? Register</Link>
       </div>
     );

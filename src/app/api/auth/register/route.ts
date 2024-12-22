@@ -2,8 +2,14 @@ import { prisma } from '../../../../../lib/prisma';
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcrypt';
 
+interface IUser {
+  name: string,
+  email: string,
+  password: string
+}
+
 export const POST = async(request: Request) => {
-  const { name, email, password } = await request.json();
+  const { name, email, password } : IUser = await request.json();
 
   try {
     const userExists = !!(await prisma.user.findFirst({
