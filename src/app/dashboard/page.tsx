@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './page.module.scss';
 
-const Dashboard =  () => {
+const Dashboard = () => {
   const session = useSession();
   const router = useRouter();
   const [shownPosts, SetShownPosts] = useState(2);

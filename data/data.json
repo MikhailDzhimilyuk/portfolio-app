@@ -2,6 +2,7 @@
     "categoryInfo" : {
         "personalqualities": {
             "title": "My personal qualities",
+            "descPage": "About my personal qualities and advantages over other candidates",
             "info": [
                 {
                     "imageURL": "/logical_thinking.jpg",
@@ -57,26 +58,28 @@
             ]
         },
         "professionalskills": {
-        "title": "My proffesional skills",
-        "info": [
-            {
-                "imageURL": "/web_programmer_stack.jpg",
-                "titleInfo": "Web programmer stack",
-                "desc": "Experience in developing web applications using the following technologies: HTML, JavaScript, CSS, TypeScript, C Sharp, Sass, Git, Node.js, NestJS, Next.js, Event Loop, RESTful, PostgreSQL, Prisma, OAuth, JWT strategy, Webpack, SSR, SPA, Endpoints, Esint, Figma, Tailwind. In this application I have implemented most of the technologies listed above",
-                "buttonURL": "https://hh.ru/applicant/resumes/view?resume=4dd38e30ff0cf03d770039ed1f73597a665077",
-                "buttonText": "My portfolio"  
-            },
-            {
-                "imageURL": "/unity_game_developer_stack.jpg",
-                "titleInfo": "Unity game developer stack",
-                "desc": "Experience in developing 2D and 3D applications on the Unity engine for mobile devices and PCs; WebGL platform; implementing saves (indexedDB, on the server, File.IO, localStorage, PlayerPrefs); writing plugins in JS; shaders; URP; project optimization; procedural level generation; 3D modeling in Blender; UniTask; I apply the principles of SOLID, KISS",
-                "buttonURL": "https://yandex.ru/games/developer/57598",
-                "buttonText": "Published projects"
-            }
-        ]
+            "title": "My proffesional skills",
+            "descPage": "About my professional skills in web development and gaming industry",
+            "info": [
+                {
+                    "imageURL": "/web_programmer_stack.jpg",
+                    "titleInfo": "Web programmer stack",
+                    "desc": "Experience in developing web applications using the following technologies: HTML, JavaScript, CSS, TypeScript, C Sharp, Sass, Git, Node.js, NestJS, Next.js, Event Loop, RESTful, PostgreSQL, Prisma, OAuth, JWT strategy, Webpack, SSR, SPA, Endpoints, Esint, Figma, Tailwind. In this application I have implemented most of the technologies listed above",
+                    "buttonURL": "https://hh.ru/applicant/resumes/view?resume=4dd38e30ff0cf03d770039ed1f73597a665077",
+                    "buttonText": "My portfolio"  
+                },
+                {
+                    "imageURL": "/unity_game_developer_stack.jpg",
+                    "titleInfo": "Unity game developer stack",
+                    "desc": "Experience in developing 2D and 3D applications on the Unity engine for mobile devices and PCs; WebGL platform; implementing saves (indexedDB, on the server, File.IO, localStorage, PlayerPrefs); writing plugins in JS; shaders; URP; project optimization; procedural level generation; 3D modeling in Blender; UniTask; I apply the principles of SOLID, KISS",
+                    "buttonURL": "https://yandex.ru/games/developer/57598",
+                    "buttonText": "Published projects"
+                }
+            ]
         },
         "motivation": {
             "title": "My motivation",
+            "descPage": "About my motivation to work",
             "info": [
                 {
                     "imageURL": "/passion_for_programming.jpg",
