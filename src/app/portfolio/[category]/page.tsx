@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Button from '@/components/Button/Button';
-import { getData } from '@/app/api/json/route';
+import { getData } from '../../../../lib/json';
 import styles from './page.module.scss';
 
 interface IParams {
