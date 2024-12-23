@@ -36,7 +36,11 @@ export const POST = async(request: Request) => {
       status: 409,
     });
   } catch (error) {
-    return new NextResponse(error.message, {
+    let message = 'Unknown Error';
+
+    if (error instanceof Error) message = error.message;
+
+    return new NextResponse(message, {
       status: 500,
     });
   }

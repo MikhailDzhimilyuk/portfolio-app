@@ -2,9 +2,18 @@
 
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { FormEvent, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './page.module.scss';
+
+interface FormElements extends HTMLFormControlsCollection {
+  email: HTMLInputElement,
+  password: HTMLInputElement,
+}
+
+interface FormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
 
 const Login = () => {
   const session = useSession();
@@ -45,10 +54,10 @@ const Login = () => {
   }
 
   if (session.status == "unauthenticated") {
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<FormElement>) => {
       e.preventDefault();
-      const email = e.target[0].value;
-      const password = e.target[1].value;
+      const email = e.currentTarget.elements.email.value;
+      const password = e.currentTarget.elements.password.value;
       signIn("credentials", { email, password });
     };
 
@@ -56,6 +65,7 @@ const Login = () => {
       <div className={styles.container}>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
+            id="email"
             type="email"
             placeholder="Email"
             required
@@ -63,6 +73,7 @@ const Login = () => {
             className={styles.input}
           />
           <input
+            id="password"
             type="password"
             placeholder="Password"
             required

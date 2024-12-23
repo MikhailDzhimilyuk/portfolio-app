@@ -18,10 +18,12 @@ export const GET = async(request: Request) => {
   }
 }
 
-export const DELETE = async(request: Request, { params }) => {
-  const { id } = params;
+export const DELETE = async(
+  request: Request, 
+  { params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
   try {
-    const post = await prisma.post.delete({
+    await prisma.post.delete({
       where: {
         id: Number(id)
       },

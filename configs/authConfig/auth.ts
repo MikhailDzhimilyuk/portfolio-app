@@ -55,7 +55,11 @@ export const authConfig : AuthOptions = {
 
         } 
         catch (error) {
-           throw new Error(error);
+          let message = 'Unknown Error';
+
+          if (error instanceof Error) message = error.message;
+
+          reportError({ message })
         }
       }
     }),

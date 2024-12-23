@@ -1,20 +1,31 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 
+interface FormElements extends HTMLFormControlsCollection {
+  name: HTMLInputElement,
+  email: HTMLInputElement,
+  password: HTMLInputElement,
+}
+
+interface FormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
+
+
 const Register = () => {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const [subtitle, setSubtitle] = useState('Please sign up to see the dashboard.');
   const router = useRouter();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<FormElement>) => {
     e.preventDefault();
-    const name = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+    const name = e.currentTarget.elements.name.value;
+    const email = e.currentTarget.elements.email.value;
+    const password = e.currentTarget.elements.password.value;
 
     try {
       const res = await fetch("/api/auth/register", {
@@ -31,8 +42,10 @@ const Register = () => {
       res.status === 201 && router.push("/dashboard/login?success=Account has been created");
       if (res.status === 409) { setSubtitle('User with this email is already registered') }
     } catch (err) {
-      setError(err);
-      console.log(err);
+      if (err instanceof Error) {
+        setError(err);
+        console.log(err);
+      }
     }
   };
 
@@ -42,6 +55,7 @@ const Register = () => {
       <h2 className={styles.subtitle}>{subtitle}</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
+          id="name"
           type="text"
           placeholder="Username"
           required
@@ -49,6 +63,7 @@ const Register = () => {
           className={styles.input}
         />
         <input
+        id="email"
           type="email"
           placeholder="Email"
           required
@@ -56,6 +71,7 @@ const Register = () => {
           className={styles.input}
         />
         <input
+          id="password"
           type="password"
           placeholder="Password"
           required

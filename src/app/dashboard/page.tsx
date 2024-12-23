@@ -7,12 +7,32 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './page.module.scss';
 
+interface FormElements extends HTMLFormControlsCollection {
+  title: HTMLInputElement,
+  desc: HTMLInputElement,
+  img: HTMLInputElement,
+  content: HTMLInputElement
+}
+
+interface FormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
+
+interface IPost {
+  id: number,
+  title: string,
+  desc: string,
+  content: string,
+  img: string,
+  userId: number,
+}
+
 const Dashboard = () => {
   const session = useSession();
   const router = useRouter();
   const [shownPosts, SetShownPosts] = useState(2);
 
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const fetcher = (...args: Parameters<typeof fetch>) => fetch(...args).then((res) => res.json());
   const { data, mutate, error, isLoading } = useSWR(
     `/api/posts?email=${session?.data?.user?.email}`,
     fetcher
@@ -22,12 +42,12 @@ const Dashboard = () => {
     if (session.status == "unauthenticated") { router?.push("/dashboard/login"); }
   }, [session.status]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<FormElement>) => {
     e.preventDefault();
-    const title = e.target[0].value;
-    const desc = e.target[1].value;
-    const img = e.target[2].value;
-    const content = e.target[3].value;
+    const title = e.currentTarget.elements.title.value;
+    const desc = e.currentTarget.elements.desc.value;
+    const img = e.currentTarget.elements.img.value;
+    const content = e.currentTarget.elements.content.value;
 
     try {
       await fetch("/api/posts", {
@@ -41,13 +61,15 @@ const Dashboard = () => {
         }),
       });
       mutate();
-      e.target.reset();
     } catch (error) {
       console.log(error);
     }
+
+    const resetForm = e.target as HTMLFormElement;
+    resetForm.reset();
   };
 
-  const handleDelete = async (event: React.SyntheticEvent<EventTarget>, id: string) => {
+  const handleDelete = async (event: React.SyntheticEvent<EventTarget>, id: number) => {
     event.stopPropagation();
     try {
       await fetch(`/api/posts/${id}`, {
@@ -75,7 +97,7 @@ const Dashboard = () => {
         {
           !isLoading &&
             <div className={styles.posts}>
-            {data.toReversed().map((post, index) => (
+            {data.toReversed().map((post: IPost, index: number) => (
               <div onClick={() => openPost(`/blog/${post.id}`)} className={getClassNamePost(index)} key={post.id}>
                 <div className={styles.imgContainer}>
                   <Image
@@ -105,9 +127,10 @@ const Dashboard = () => {
 
         <form className={styles.newform} onSubmit={handleSubmit}>
           <h1>Add New Post</h1>
-          <input type="text" autoComplete="off" placeholder="Title" maxLength={100} required className={styles.input} />
-          <input type="text" autoComplete="off" placeholder="Description" maxLength={250} required className={styles.input} />
+          <input id="title" type="text" autoComplete="off" placeholder="Title" maxLength={100} required className={styles.input} />
+          <input id="desc" type="text" autoComplete="off" placeholder="Description" maxLength={250} required className={styles.input} />
           <input 
+            id="img"
             type="url" 
             placeholder="Image URL from Freepik/Unsplash" 
             autoComplete="off" 
@@ -117,6 +140,7 @@ const Dashboard = () => {
             pattern="https://img.freepik.com/.*|https://images.unsplash.com/.*"
             />
           <textarea 
+            id="content"
             placeholder="Content"
             cols={30} 
             rows={10} 
