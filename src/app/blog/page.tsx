@@ -26,7 +26,7 @@ const Blog = async ({
   const { p = 1 } = await searchParams;
   const currPageNum = (p < 1) ? 1 : p;
 
-  const allPostsCounter = await prisma.post.count({});
+  const allPostsCounter = await prisma.post.count();
   const skipPosts = allPostsCounter - currPageNum * postsShown;
 
   const posts = await prisma.post.findMany({
