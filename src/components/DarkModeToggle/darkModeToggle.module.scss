@@ -1,6 +1,8 @@
+@use '../../utils/variables.scss' as *;
+
 .container{
-  width: 42px;
-  height: 24px;
+  width: 44px;
+  height: 26px;
   border: 1.5px solid #53c28b78;
   border-radius: 30px;
   display: flex;
@@ -16,9 +18,39 @@
 }
 
 .ball {
-width: 15px;
-height: 15px;
-background-color: #53c28b;
-border-radius: 50%;
-position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #53c28b;
+  border-radius: 50%;
+  position: absolute;
+}
+
+@media (max-width: $small-width) {
+  .container{
+    width:40px;
+    height: 24px;
+  }
+
+  .ball {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: $extra-small) {
+  .container{
+    width:36px;
+    height: 22px;
+    border-radius: 25px;
+    padding: 2px;
+  }
+  
+  .icon {
+    font-size: 10px;
+  }
+  
+  .ball {
+    width: 14px;
+    height: 14px;
+  }
 }

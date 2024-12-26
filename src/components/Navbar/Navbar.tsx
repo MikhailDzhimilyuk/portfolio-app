@@ -51,13 +51,15 @@ const Navbar = () => {
     return (
         <nav className={styles.container}>
             <Link href='/' className={styles.logo}>Portfolio App</Link>
-            <div className={styles.links}>
+            <div className={styles.right}>
                 <DarkModeToggle />
-                {links.map(link => 
-                    <Link  key={link.id} href={link.url} title={link.title} >
-                        {link.title}
-                    </Link>
-                )}
+                <div className={styles.links}>
+                    {links.map(link => 
+                        <Link  key={link.id} href={link.url} title={link.title} className={styles.link} >
+                            {link.title}
+                        </Link>
+                    )}
+                </div>
                 {(session.status == 'authenticated' && 
                     <button className={styles.signout} onClick={() => signOut()}>Logout</button>) || 
                 (session.status == 'unauthenticated' && 

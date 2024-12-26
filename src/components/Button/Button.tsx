@@ -5,13 +5,14 @@ interface IPropsBtn {
     text: string,
     url: string,
     className?: string,
+    padding?: number,
 }
 
-const Button = ({text, url, className} : IPropsBtn) => {
+const Button = ({text, url, className, padding} : IPropsBtn) => {
     return (
         <div>
             <Link href={url}>
-                <button className={className || styles.container}>
+                <button className={className || styles.container} style={{padding: `${padding}px`}}>
                     {text}
                 </button>
             </Link>

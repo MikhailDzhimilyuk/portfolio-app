@@ -1,6 +1,9 @@
+@use '../../utils/variables.scss' as *;
+
 .title {
-    font-size: 46px;
-    margin-bottom: 100px;
+    font-size: 42px;
+    margin-top: 10px;
+    margin-bottom: 70px;
     text-align: center;
 }
 
@@ -46,4 +49,25 @@
     border: 3px solid #bbb;
     font-size: 20px;
     font-weight: bold;
+}
+
+@media (max-width: $small-width) {
+    .title {
+        font-size: 30px;
+    }
+
+    .imgContainer { 
+        height: 400px;
+    }
+}
+
+@media (max-width: $extra-small) {
+    .title {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+
+    .imgContainer { 
+       height: 300px;
+    }
 }

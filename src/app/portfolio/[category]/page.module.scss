@@ -89,11 +89,14 @@
 }
 
 @media (max-width: $extra-small) {
+    .catTitle {
+        font-size: 30px;
+    }
     .title {
-        font-size: 34px;
+        font-size: 22px;
     }
     .desc {
-        font-size: 18px;
+        font-size: 14px;
     }
     .imgContainer {
         height: 210px;

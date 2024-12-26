@@ -80,7 +80,15 @@
 
 @media (max-width: $extra-small) {
     .imageContainer { 
-        width: 420px;
-        height: 280px;
+        width: 90%;
+        height: 250px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .content {
+        font-size: 20px;
     }
 }

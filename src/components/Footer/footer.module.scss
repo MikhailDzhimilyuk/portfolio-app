@@ -1,22 +1,56 @@
+@use '../../utils/variables.scss' as *;
+
 .container {
     height: 50px;
     font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-wrap: nowrap;
 }
 
 .social {
+    height: 50px;
     display: flex;
     align-items: center;
     gap: 5px;
+    margin-left: 5px;
 }
 
-.icon {
+.iconLink {
+    position: relative;
+    height: 34px;
+    width: 34px;
     opacity: 0.65;
     cursor: pointer;
 }
 
-.icon:hover {
+.iconLink:hover {
     opacity: 1;
+}
+
+@media (max-width: $small-width) {
+    .container {
+        font-size: 12px;
+    }
+
+    .iconLink {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media (max-width: $extra-small) {
+    .container {
+        font-size: 10px;
+    }
+
+    .social {
+        gap: 2px;
+    }
+
+    .iconLink {
+        height: 24px;
+        width: 24px;
+    }
 }

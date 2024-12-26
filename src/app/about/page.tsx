@@ -43,13 +43,13 @@ const About = () => {
 
                 <div className={styles.item}>
                     <h2 className={styles.title}>What did I want to show the employer?</h2>
-                    <p>
+                    <p className={styles.desc}>
                     First, to demonstrate my capabilities that will be useful to you. <br/><br/>
                     Second, to show that I am able to learn and improve. <br/><br/>
                     Third, to show my motivation and interest in the work. <br/><br/>
                     Fourth, that I am ready to accept the offer (don't be shy).
                     </p>
-                    <Button text='Contact' url='/contact' />
+                    <Button text='Contact' url='/contact' className={styles.btn} padding={10}/>
                 </div>
 
            </div>

@@ -1,9 +1,15 @@
+@use '../../../../utils/variables.scss' as *;
+
 .container{
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
   justify-content: center;
+}
+
+.title, .subTitle {
+  text-align: center;
 }
 
 .form{
@@ -32,4 +38,18 @@
   border-radius: 5px;
   color: #eee;
   font-weight: bold;
+}
+
+@media (max-width: $extra-small) {
+  .title {
+    font-size: 22px;
+  }
+
+  .subTitle {
+    font-size: 18px;
+  }
+
+  .form, .button {
+    width: 250px;
+  }
 }

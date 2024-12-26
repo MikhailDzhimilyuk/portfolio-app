@@ -1,3 +1,5 @@
+@use '../../../../utils/variables.scss' as *;
+
 .container {
   display: flex;
   align-items: center;
@@ -85,4 +87,11 @@
 .register {
   text-decoration: underline;
   text-underline-offset: 5px;
+}
+
+@media (max-width: $extra-small) {
+  .form, .button, .input {
+    width: 250px;
+    font-size: 16px;
+  }
 }

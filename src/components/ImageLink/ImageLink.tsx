@@ -5,14 +5,18 @@ type propsLinkType = {
   url: string,
   src: string,
   alt: string,
-  width: number,
-  height: number,
-  className: string,
+  classNameLink: string,
+  classNameImg?: string,
 }
-const ImageLink = ({url, src, alt, width, height, className} : propsLinkType) => {
+const ImageLink = ({url, src, alt, classNameLink, classNameImg} : propsLinkType) => {
   return (
-    <Link href={url}>
-      <Image src={src} width={width} height={height} className={className} alt={alt}/>
+    <Link href={url} className={classNameLink}>
+      <Image 
+        src={src}
+        fill={true}
+        className={classNameImg} 
+        alt={alt}
+      />
     </Link>
   );
 };

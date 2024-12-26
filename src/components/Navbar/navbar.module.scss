@@ -13,11 +13,17 @@
     font-size: 22px;
 }
 
-.links {
+.right {
     display: flex;
     align-items: center;
     margin-left: 10px;
     gap: 20px;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+    margin: 0 10px;
 }
 
 .signout, .signin {
@@ -39,36 +45,58 @@
 }
 
 @media (max-width: $medium-width) {
-    .links {
+    .right {
         font-size: 16px;
         gap: 16px;
     }
+
+    .links {
+        gap: 15px;
+        margin: 0 7px;
+    }
+
     .logo {
         font-size: 18px;
     }
 }
 
 @media (max-width: $small-width) {
+    .logo {
+        font-size: 14px;
+    }
+
+    .right {
+        gap: 12px;
+        font-size: 12px;
+    }
+
     .links {
         gap: 10px;
-        font-size: 14px;
+        margin: 0 5px;
     }
 
     .signin, .signout {
         font-size: 12px;
-    }
-
-    .logo {
-        font-size: 14px;
     }
 }
 
 @media (max-width: $extra-small) {
+    .logo, .right {
+        font-size: 10px;
+    }
+
     .links {
-        font-size: 12px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 7px;
+        row-gap: 5px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .signin, .signout {
         font-size: 10px;
+        margin-left: 2%;
     }
 }

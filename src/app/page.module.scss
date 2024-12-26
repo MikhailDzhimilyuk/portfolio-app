@@ -2,29 +2,35 @@
 
 .container {
   display: grid;
-  grid-template-columns: 48% 48%;
+  grid-template-areas: 
+    "title imgContainer"
+    "descContainer imgContainer";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.8fr;
   gap: 4%;
-  margin: auto 0;
+  //margin: auto 0;
 }
 
-.item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10%;
-  height: 100%;
+.descContainer {
+  grid-area: descContainer;
+  margin-bottom: 100px;
+}
+
+.imgContainer {
+  grid-area: imgContainer;
 }
 
 .title {
-  font-size: 72px;
+  grid-area: title;
+  font-size: 62px;
   background: linear-gradient(to bottom, #194c33, #bbb);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: auto 0;
 }
 
 .img {
-  height: 500px;
+  height: 100%;
   width: 100%;
   object-fit: contain;
   animation: move 3s infinite ease alternate;
@@ -40,13 +46,24 @@
 }
 
 .desc {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 300;
+  margin-bottom: 20px;
 }
 
 @media (max-width: $large-width) {
   .title {
-    font-size: 60px;
+    font-size: 52px;
+  }
+
+  .desc {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: $medium-width) {
+  .title {
+    font-size: 38px;
   }
 
   .desc {
@@ -54,23 +71,29 @@
   }
 }
 
-@media (max-width: $medium-width) {
-  .title {
-    font-size: 52px;
-  }
-
-  .desc {
-    font-size: 18px;
-  }
-}
-
 @media (max-width: $small-width) {
+  .container {
+    text-align: center;
+    grid-template-areas: 
+      "title"
+      "imgContainer"
+      "descContainer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
   .title {
     font-size: 44px;
   }
 
+  .imgContainer {
+    display: flex;
+    margin: 10px auto;
+    width: 80%;
+  }
+
   .desc {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
@@ -80,6 +103,6 @@
   }
 
   .desc {
-    font-size: 14px;
+    font-size: 18px;
   }
 }

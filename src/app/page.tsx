@@ -11,16 +11,16 @@ export const metadata = {
 export default function Home() {
   return (
     <main className={styles.container}>
-      <div className={styles.item}>
-        <h1 className={styles.title}>
-          The Future is Nextjs Framework
-        </h1>
+      <h1 className={styles.title}>
+        The Future is Nextjs Framework
+      </h1>
+      <div className={styles.descContainer}>
         <p className={styles.desc}>
           By mastering useful technologies we open the way to new opportunities
         </p>
-        <Button url='/portfolio' text='See More'/>
+        <Button url='/portfolio' text='See More' padding={15}/>
       </div>
-      <div className={styles.item}>
+      <div className={styles.imgContainer}>
         <Image src={Hero} alt='main photo' className={styles.img}/>
       </div>
     </main>

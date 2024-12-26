@@ -33,7 +33,7 @@ $colors:
     grid-template-columns: 47% 47%;
     gap: 6%;
     margin-bottom: 50px;
-    padding: 20px 1%;
+    padding: 30px 1%;
     border-radius: 10px;
 }
 
@@ -48,11 +48,13 @@ $colors:
 }
 
 .imageContainer {
+    position: relative;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 330px;
+    height: 250px;
 }
 
 .image {
@@ -104,9 +106,19 @@ $colors:
         grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr;
     }
+
+    .imageContainer {
+        width: 410px;
+        height: 310px;
+    }
 }
 
 @media (max-width: $extra-small) {
+    .imageContainer {
+        width: 250px;
+        height: 180px;
+    }
+
     .title {
         font-size: 28px;
     }
@@ -114,7 +126,7 @@ $colors:
     .author {
         font-size: 24px;
         font-weight: bold;
-    }
+    }   
     
     .desc {
         font-size: 20px;
